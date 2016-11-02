@@ -1,3 +1,3 @@
 # JavaScript - Tá bom mas não se irrite
 
-![Tá bom mas não se irrite](http://insubs.com/img/noticias/e20d97bd1c82984a46e276780d6b1dca.jpg)
+![Tá bom mas não se irrite](https://raw.githubusercontent.com/suissa/blog/master/images/mas-nao-se-irrite.jpg)
