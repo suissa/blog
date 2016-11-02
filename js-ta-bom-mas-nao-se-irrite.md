@@ -36,3 +36,13 @@ Então agora sabendo que tanto o Chrome como o Node.js rodam, basicamente, com o
 > Porque ele não tem uma arquitetura rígida que você deve seguir para que seu código funcione, como no Angular por exemplo.
 
 Eu não indico quem está começando a estudar JS começar pelo Navegador porque basicamente ele terá que aprender HTML e CSS para fazer algo decente, agora no backend não precisa. E se o aluno que aprender a **programar** mesmo, IMHO, a melhor forma é no backend pois ele aprenderá muitos conceitos que podderá utilizar em qualquer outra linguagem de programação, agora no frontend será aplicado apenas aos navegadores.
+
+## A melhor forma de aprender JS/programação
+
+Eu como professor percebi que a melhor forma de ensinar JS (ou programação) é convertendo o conhecimento pré-existente do aluno em lógica e algoritmo para depois mostrar na programação.
+
+Digo isso com conhecimento de causa dando um exemplo bem simples.
+
+[Minha mulher](https://github.com/fpchemical/) está terminando a faculdade de Licenciatura em Química, por sinal colocando seu [TCC aqui no Github](https://github.com/fpchemical/TCC), e ela **NUNCA** na vida tinha programado, aliás **ela nem sabia o que podia ser feito com a programação.** Então começamos a fazer [funções simples de matemática](https://github.com/fpchemical/funcoes-matematicas) que ela sempre usava.
+
+Aí que vem o interessante de estar utilizando o Node.js, pois precisei ensinar ela a trabalhar com o termina e a **executar** um arquivo `.js` 
