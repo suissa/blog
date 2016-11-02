@@ -35,3 +35,4 @@ Então agora sabendo que tanto o Chrome como o Node.js rodam, basicamente, com o
 
 > Porque ele não tem uma arquitetura rígida que você deve seguir para que seu código funcione, como no Angular por exemplo.
 
+Eu não indico quem está começando a estudar JS começar pelo Navegador porque basicamente ele terá que aprender HTML e CSS para fazer algo decente, agora no backend não precisa. E se o aluno que aprender a **programar** mesmo, IMHO, a melhor forma é no backend pois ele aprenderá muitos conceitos que podderá utilizar em qualquer outra linguagem de programação, agora no frontend será aplicado apenas aos navegadores.
