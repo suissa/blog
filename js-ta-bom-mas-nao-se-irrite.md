@@ -39,6 +39,8 @@ Eu não indico quem está começando a estudar JS começar pelo Navegador porque
 
 ## A melhor forma de aprender JS/programação
 
+> Não! Não comece pelo React!
+
 Eu, como professor, percebi que uma forma muito boa de ensinar JS (ou programação) é convertendo o conhecimento pré-existente do aluno em lógica e algoritmo para depois mostrar na programação.
 
 Digo isso com conhecimento de causa dando um exemplo bem simples.
