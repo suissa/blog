@@ -1,5 +1,28 @@
 # Você sabe de onde vem o bit?
 
+Estava eu desafiando/ensinando alguns programadores iniciantes em um grupo no Telegram, onde questionei-os quem conseguiria inferir o que acontece [nesse exercício](https://github.com/Webschool-io/JavaScript-Obrigatorio/blob/master/docs/bitwise.md):
+
+```js
+> 20..toString(2)
+'10100'
+> 20 >> 1
+10
+> 20 >> 2
+5
+> 20 >> 3
+2
+> 10..toString(2)
+'1010'
+> 5..toString(2)
+'101'
+> 2..toString(2)
+'10'
+``` 
+
+> Você consegue inferir o que acontece?
+
+
+
 > Imagine um mundo feito apenas de 2 valores: 0 e 1.
 
 > Chato né?
@@ -18,13 +41,13 @@ Deixar-lhe-eis com uma pergunta que minha mulher, química/professora, fez-me es
 
 **Ahhhhh essa é fácil né?!!!**
 
-![Pikaaaachuuu](http://i.imgur.com/wngrnbk.png)
-
 > Depende.
 
-Primeiramente preciso cituar-lhe onde está se metendo: 
+## Tecnicamente falando
 
-> O bit está em todos os lugares, onde você menos esperar lá estará ele.
+Essa magia é feita 
 
 
-Aposto que você nem imaginava que 
+## Refêrencias teóricas
+
+- [Química Inorgânica não tão Concisa, Lee, J.D. - pag 35]() 
