@@ -43,11 +43,20 @@ Deixar-lhe-eis com uma pergunta que minha mulher, química/professora, fez-me es
 
 > Depende.
 
-## Tecnicamente falando
+Antes de tudo você precisa saber de onde eles vêm. 
 
-Essa magia é feita 
+No seu computador, mais precisamente no seu processador, existem milhões de transistores, que são pecinhas, atualmente nanométricas, feitas de cristais de silício. E seu papel como protagonista é de "deixar passar" ou não uma corrente elétrica.
+
+> Como você imagina que isso seja possível?
+
+![transistor](http://www.tandyonline.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/c/bc635-transistor.png)
+
+> O transistor é considerado por muitos uma das maiores descobertas ou invenções da história moderna, tendo tornado possível a revolução dos computadores e equipamentos eletrônicos. 
+
+> Por exemplo, o microprocessador Cell do console Playstation 3 tem aproximadamente 234 milhões de transistores, usando uma arquitetura de fabricação de 45 nanômetros, ou seja, a porta de controle de cada transistor tem apenas 45 milionésimos de um milímetro.
 
 
 ## Refêrencias teóricas
 
 - [Química Inorgânica não tão Concisa, Lee, J.D. - pag 35]() 
+- [https://pt.wikipedia.org/wiki/Trans%C3%ADstor](https://pt.wikipedia.org/wiki/Trans%C3%ADstor)
