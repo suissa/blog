@@ -21,7 +21,7 @@ Estava eu desafiando/ensinando alguns programadores iniciantes em um grupo no Te
 
 > Você consegue inferir o que acontece? Bom mas esse não é foco desse artigo.
 
-![imagine](http://gumtoo.com/media/catalog/product/cache/1/image/700x700/9df78eab33525d08d6e5fb8d27136e95/i/m/imagine_typography_temporary_tattoos_01.png)
+![imagine](http://www.localfoodscampus.com/explore/wp-content/uploads/2015/05/imagine.jpg)
 
 > Imagine um mundo feito apenas de 2 valores: 0 e 1.
 
