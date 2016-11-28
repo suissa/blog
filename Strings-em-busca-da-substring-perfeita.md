@@ -22,6 +22,8 @@ Vamos **iniciar** com a [startsWith](https://developer.mozilla.org/en-US/docs/We
 const str = 'É nóis que voa bruxão'
 
 console.log(str.startsWith('É nois')) // true
-console.log(str.startsWith('que voa)) // false
+console.log(str.startsWith('que voa')) // false
 console.log(str.startsWith('bruxão', 15)) // true
 ```
+
+Você deve ter percebido que se passarmos, como segundo parâmetro, a posição de início da busca podemos fazer essa pesquisa em qualquer parte da *String*, fora que ela retorna `true/false` o que normalmente é o valor que necessito. 
