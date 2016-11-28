@@ -1,4 +1,4 @@
-# Strings em busca da substring perfeita
+# Strings - Em busca da substring perfeita
 
 ![](https://string.se/wordpress/wp-content/themes/string/assets/images/logotype.png)
 
