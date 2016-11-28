@@ -17,6 +17,8 @@ A maioria dos programadores normalmente utiliza a função [indexOf](https://dev
 
 Caso não encontre a substring a função retorna `-1`, caso encontre retornará sua posição em relação a *String*, porém possuimos outras funções que podem nos auxiliar nisso e, para mim, são melhores quando quero testar apenas se aquela substring exsite dentro da *String*.
 
+## startsWith
+
 Vamos **iniciar** com a [startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith), se você entende Inglês deve ter entendido minha tentativa de piada se você não entende então saiba que essa função serve para pesquisar se a *String* começa com a substring, por exemplo:
 
 
@@ -30,6 +32,8 @@ console.log(str.startsWith('bruxão', 15)) // true
 
 Você deve ter percebido que se passarmos, como segundo parâmetro, a posição de início da busca podemos fazer essa pesquisa em qualquer parte da *String*, fora que ela retorna `true/false` o que normalmente é o valor que necessito. 
 
+## endsWith
+
 Mas não vamos **terminar** por aí, ainda temos a [endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) que é basicamente o contrário da `startsWith`, com a diferença que a posição passada como segundo parâmetro será a definição do tamanho total para a busca nessa *String*, como podemos ver abaixo:
 
 ```js
@@ -39,6 +43,8 @@ console.log(str.endsWith('É nois')) // false
 console.log(str.endsWith('que voa', 14)) // true
 console.log(str.endsWith('bruxão')) // true
 ```
+
+## includes
 
 Porém a que eu mais uso é a [includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) que faz essa busca em qualquer posição da *String* e a posição passada no segundo parâmetro é a definição do início da busca, bem simples também:
 
