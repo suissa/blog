@@ -52,3 +52,14 @@ console.log(str.includes('bruxão')) // true
 ```
 
 Agora quando você for fazer aquele teste com `indexOf` dentro de um `if` lembre que existem outras funções, beleza?? 
+
+## Dicas
+
+Aproveitando o ensejo darei ua dica marota de como capitalizar uma palavra ou frase:
+
+```js
+const s = 'suissa'
+s[0].toUpperCase() + s.slice(1) //'Suissa'
+```
+
+Marotagem da boa essa né??
