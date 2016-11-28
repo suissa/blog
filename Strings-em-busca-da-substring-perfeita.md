@@ -27,3 +27,13 @@ console.log(str.startsWith('bruxão', 15)) // true
 ```
 
 Você deve ter percebido que se passarmos, como segundo parâmetro, a posição de início da busca podemos fazer essa pesquisa em qualquer parte da *String*, fora que ela retorna `true/false` o que normalmente é o valor que necessito. 
+
+Mas não vamos **terminar** por aí, ainda temos a [endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) que é basicamente o contrário da `startsWith`, com a diferença que a posição passada como segundo parâmetro será a definição do tamanho total para a busca nessa *String*, como podemos ver abaixo:
+
+```js
+const str = 'É nóis que voa bruxão'
+
+console.log(str.endsWith('É nois')) // false
+console.log(str.endsWith('que voa', 14)) // true
+console.log(str.endsWith('bruxão')) // true
+```
