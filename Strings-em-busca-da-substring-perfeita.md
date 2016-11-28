@@ -1,5 +1,7 @@
 # Strings em busca da substring perfeita
 
+![](https://string.se/wordpress/wp-content/themes/string/assets/images/logotype.png)
+
 A maioria dos programadores normalmente utiliza a função [indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) para verificar se existe uma *String* "dentro" da outra, vamos ver esse exemplo da [MDN]():
 
 ```js
