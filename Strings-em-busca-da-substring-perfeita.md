@@ -37,3 +37,16 @@ console.log(str.endsWith('É nois')) // false
 console.log(str.endsWith('que voa', 14)) // true
 console.log(str.endsWith('bruxão')) // true
 ```
+
+Porém a que eu mais uso é a [includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) que faz essa busca em qualquer posição da *String* e a posição passada no segundo parâmetro é a definição do início da busca, bem simples também:
+
+
+```js
+const str = 'É nóis que voa bruxão'
+
+console.log(str.includes('É nois', 1)) // false
+console.log(str.includes('que voa')) // true
+console.log(str.includes('bruxão')) // true
+```
+
+Agora quando você for fazer aquele teste com `indexOf` dentro de um `if` lembre que existem outras funções, beleza?? 
