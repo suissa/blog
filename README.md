@@ -9,6 +9,7 @@
 
 E como eu não gostei de nenhuma das respostas dadas, como podem ver abaixo, quis resolver de outra forma.
 
+**Não que seja a melhor e nem *funcional* é uma forma diferente de se resolver o mesmo problema.** O intuito aqui no  mostrar a mais correta nem a mais veloz, apenas mostrar outra opção.
 
 ![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array1.png)
 
@@ -127,7 +128,7 @@ const arr4 = transform(x)[2]
 */
 ```
 
-ps: *a ordem da segunda com a terceira foi deixada invertida pois quis apenas continuar com as funções da solução vista no início.**
+ps: esse último exemplo APENAS DIDÁTICO, pois dessa forma vc está executando 3 vezes a mesma função, quando poderia armazenar em uma variável seu resultado e apenas acessar suas posições.
 
 > E aí ficou bom? Caso tenha uma forma diferente de fazer por favor envie um PR adicionando-a abaixo.
 
@@ -180,3 +181,24 @@ var res = x.map(function (el, idx) {
 console.log(retObj);
 ```
 [Link para a solução acima](https://jsfiddle.net/y6obeg0t/)
+
+
+```js
+const input = [1, 2, 3, 4, 5]
+
+const square = n => n * n
+const negative = n => -n
+const string = n => String(n)
+
+const maps = [square, negative, string]
+
+const output = input.reduce((acc, val) =>
+  acc.map((arr, i) => arr.concat([maps[i](val)])),
+  maps.map(() => [])
+)
+
+console.log(output)
+```
+[Link para a solução acima](https://repl.it/EmaG/2)
+
+
