@@ -5,8 +5,14 @@
 
 ![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array.png)
 
+[Link para a pergunta](https://www.facebook.com/groups/nodejsbrasil/permalink/938231559643465/)
 
-![Link para a pergunta](https://www.facebook.com/groups/nodejsbrasil/permalink/938231559643465/)
+E como eu não gostei de nenhuma das respostas dadas, como podem ver abaixo, quis resolver de outra forma.
+
+
+![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array1.png)
+
+![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array2.png)
 
 
 ```js
