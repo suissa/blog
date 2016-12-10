@@ -98,6 +98,37 @@ console.log(transform(x))
 */
 ```
 
+Caso o autor do *post* necessite de cada resposta em uma variável podemos fazer assim:
+
+
+```js
+const x = [1, 2, 3, 4, 5];
+const primeira = (el) => Math.pow(el, 2)
+const segunda = (el) => el + ''
+const terceira = (el) => el * -1
+
+const transform = (x) => ([
+  Array.from(x, primeira),
+  Array.from(x, segunda),
+  Array.from(x, terceira),
+])
+
+const arr2 = transform(x)[0]
+const arr3 = transform(x)[1]
+const arr4 = transform(x)[2]
+
+/*
+> arr2
+[ 1, 4, 9, 16, 25 ]
+> arr3
+[ '1', '2', '3', '4', '5' ]
+> arr4
+[ -1, -2, -3, -4, -5 ]
+*/
+```
+
+ps: *a ordem da segunda com a terceira foi deixada invertida pois quis apenas continuar com as funções da solução vista no início.**
+
 > E aí ficou bom? Caso tenha uma forma diferente de fazer por favor envie um PR adicionando-a abaixo.
 
 
