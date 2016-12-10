@@ -9,6 +9,7 @@
 
 E como eu não gostei de nenhuma das respostas dadas, como podem ver abaixo, quis resolver de outra forma.
 
+**Não que seja a melhor e nem *funcional* é uma forma diferente de se resolver o mesmo problema.** O intuito aqui no  mostrar a mais correta nem a mais veloz, apenas mostrar outra opção.
 
 ![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array1.png)
 
