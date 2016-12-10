@@ -132,6 +132,33 @@ ps: *a ordem da segunda com a terceira foi deixada invertida pois quis apenas co
 > E aí ficou bom? Caso tenha uma forma diferente de fazer por favor envie um PR adicionando-a abaixo.
 
 
+## Refatoraçao marota
+
+
+```js
+const x = [1, 2, 3, 4, 5];
+const primeira = (el) => Math.pow(el, 2)
+const segunda = (el) => el + ''
+const terceira = (el) => el * -1
+
+const fns = [primeira, segunda, terceira]
+const fromTo = (x, fn, i) => {
+  console.log(x, fn, i)
+  // Array.from(x, fn)
+}
+const createArrays = fromTo.bind(this, x)
+
+
+const transform = (x, fns) => 
+  x.map(fromTo).bind(fns)
+
+console.log(transform(x, fns))
+/*[ [ 1, 4, 9, 16, 25 ],
+  [ '1', '2', '3', '4', '5' ],
+  [ -1, -2, -3, -4, -5 ] ]
+*/
+```
+
 ## Outras soluções
 
 
