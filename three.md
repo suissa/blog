@@ -1,6 +1,6 @@
 
 
-![]()
+![](https://raw.githubusercontent.com/suissa/blog/master/images/fb-desafio-array.png)
 
 
 ![Link para a pergunta](https://www.facebook.com/groups/nodejsbrasil/permalink/938231559643465/)
