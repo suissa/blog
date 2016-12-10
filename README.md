@@ -102,3 +102,23 @@ console.log(transform(x))
 
 
 ## Outras soluções
+
+
+```js
+var x = [1, 2, 3, 4, 5];
+var retObj = {
+    arr1: [],
+  arr2: [],
+  arr3: []
+};
+
+var res = x.map(function (el, idx) {
+    this.arr1.push( Math.pow(el, 2) );
+    this.arr2.push( el + '' );
+    this.arr3.push( el * -1);
+    return el;
+}, retObj);
+
+console.log(retObj);
+```
+[Link para a solução acima](https://jsfiddle.net/y6obeg0t/)
