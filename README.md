@@ -153,3 +153,24 @@ var res = x.map(function (el, idx) {
 console.log(retObj);
 ```
 [Link para a solução acima](https://jsfiddle.net/y6obeg0t/)
+
+
+```js
+const input = [1, 2, 3, 4, 5]
+
+const square = n => n * n
+const negative = n => -n
+const string = n => String(n)
+
+const maps = [square, negative, string]
+
+const output = input.reduce((acc, val) =>
+  acc.map((arr, i) => arr.concat([maps[i](val)])),
+  maps.map(() => [])
+)
+
+console.log(output)
+```
+[Link para a solução acima](https://repl.it/EmaG/2)
+
+
