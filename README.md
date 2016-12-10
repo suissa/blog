@@ -128,7 +128,7 @@ const arr4 = transform(x)[2]
 */
 ```
 
-ps: *a ordem da segunda com a terceira foi deixada invertida pois quis apenas continuar com as funções da solução vista no início.**
+ps: esse último exemplo APENAS DIDÁTICO, pois dessa forma vc está executando 3 vezes a mesma função, quando poderia armazenar em uma variável seu resultado e apenas acessar suas posições.
 
 > E aí ficou bom? Caso tenha uma forma diferente de fazer por favor envie um PR adicionando-a abaixo.
 
