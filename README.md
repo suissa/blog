@@ -118,6 +118,9 @@ const arr2 = transform(x)[0]
 const arr3 = transform(x)[1]
 const arr4 = transform(x)[2]
 
+// OU usar destructuring com array matching:
+const [arr2, arr3, arr4] = transform(x)
+
 /*
 > arr2
 [ 1, 4, 9, 16, 25 ]
