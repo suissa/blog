@@ -104,6 +104,7 @@ const reduzir = (arr, fn) => arr.reduce(fn)
 
 ```
 
+### NAO TERMINEI AINDAAAA!!
 
 ## SQL
 
