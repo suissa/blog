@@ -85,6 +85,26 @@ const impares = filtrar(NUMEROS, apenasImpares)
 
 ### reduce
 
+Reduz todos os elementos em apenas 1.
+
+```
+const fn = (acumulador, atual) => acumulador + atual
+arr.reduce(fn)
+```
+
+Problemas que resolve:
+
+- somatória
+- média
+- criação de 1 novo Objeto ou Array
+- uma caralhada
+
+```js
+const reduzir = (arr, fn) => arr.reduce(fn)
+
+```
+
+
 ## Experientes
 
 Vamos usar o seguinte array:
