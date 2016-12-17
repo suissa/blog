@@ -2,6 +2,20 @@
 
 ## Iniciantes
 
+### map
+
+Mapeia cada valor do array para um valor novo.
+
+```
+const fn = (elemento, posicao) => console.log(elemento, posicao)
+arr.map(fn)
+```
+
+Problemas que resolve:
+
+- modificação dos valores atuais
+- modificação das posições atuais
+
 ```js
 const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -44,12 +58,20 @@ const tudoJuntoEMisturado = NUMEROS.map(andaUmaPosicao).map(elevadoAoQuadrado).m
 // [ 64, 729, 4096, 15625, 46656, 117649, 262144, 531441, 1 ]
 ```
 
+### filter
 
+Fltra cada valor do array, caso o mesmo passe pelo teste condicional ele será adicionado à resposta.
 
-const posicoes = (num, posicao) => 
-  (posicao % 2 === 0) 
-    ? 'posição par: ' + posicao
-    : 'posição ímpar: ' + posicao
+```
+const fn = (elemento) => {
+  if (elemento > 3 ) return elemento
+}
+arr.map(fn)
+```
+
+Problemas que resolve:
+
+- remoção dos elementos não desejados
 
 ```js
 const filtrar = (arr, fn) => arr.filter(fn)
@@ -61,9 +83,11 @@ const pares = filtrar(NUMEROS, apenasPares)
 const impares = filtrar(NUMEROS, apenasImpares)
 ```
 
+### reduce
 
 ## Experientes
 
+Vamos usar o seguinte array:
 
 ```js
 [
