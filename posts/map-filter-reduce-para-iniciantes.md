@@ -105,7 +105,7 @@ const reduzir = (arr, fn) => arr.reduce(fn)
 ```
 
 
-## Experientes
+## SQL
 
 Vamos usar o seguinte array:
 
