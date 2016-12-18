@@ -2,6 +2,8 @@
 
 Explicação **didática** sobre `map`, `filter` e `reduce`, dando um exemplo de cada para todas as disciplinas escolares. Ideias são sempre bem-vindas!
 
+> Mapeie os bons momentos, filtre suas companhias e reduza o stress.
+
 ## map
 
 Mapeia cada valor do array para um valor novo.
@@ -110,13 +112,32 @@ const reduzir = (arr, fn) => arr.reduce(fn)
 
 #### map
 
+```
+
 O conjunto A possui números inteiros e você precisa transformar todos seus elementos para o seu quadrado, como visto na imagem abaixo:
+
+```
 
 ![Conjunto a ser transformado](https://raw.githubusercontent.com/suissa/blog/master/images/conjunto-map.jpg)
 
 #### filter
 
+```
+
+Dado o conjunto A de números inteiros e positivos, filtre apenas os números primos.
+
+```
+
+
 #### reduce
+
+
+```
+
+Dada uma PG finita qualquer com n elemento, ou seja, com a quantidade de elementos indefinida. PG finita (a1, a2, a3, ... , an).
+
+```
+
 
 ### Física
 
@@ -127,6 +148,43 @@ O conjunto A possui números inteiros e você precisa transformar todos seus ele
 #### reduce
 
 ### Química
+
+#### map
+
+
+```
+
+Reação de dupla troca.
+
+```
+
+
+#### filter
+
+```
+
+Filtragem de sólido de uma solução aquosa.
+
+```
+
+
+#### reduce
+
+```
+
+Reação de síntese.
+
+```
+
+### Biologia
+
+#### map
+
+#### filter
+
+#### reduce
+
+### Português
 
 #### map
 
