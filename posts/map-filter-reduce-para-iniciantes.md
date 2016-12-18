@@ -1,5 +1,7 @@
 # Iniciantes
 
+Explicação **didática** sobre `map`, `filter` e `reduce`, dando um exemplo de cada para todas as disciplinas escolares. Ideias são sempre bem-vindas!
+
 ## map
 
 Mapeia cada valor do array para um valor novo.
