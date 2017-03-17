@@ -23,7 +23,7 @@ E compartilhou este trecho:
 const y = le => (f => f(f))(f => le(x => f(f)(x)))
 
 ```
-*[Link para esse gist](https://gist.github.com/stefanmaric/689e54f7cb45e458489da3fe55c0680f#file-y-combinator-js)*
+*[Link para esse gist original](https://gist.github.com/stefanmaric/689e54f7cb45e458489da3fe55c0680f#file-y-combinator-js)*
 
 Nesse ponto, eu não tinha ideia do que era um *y-combinator* ou como esse pedaço de código funcionou; foi o início de uma busca espontânea de melhores respostas na terra da fantasia do JavaScript e eu estarei compartilhando nossas descobertas ingênuas hoje. Vou assumir que você tem alguma experiência com ES2015 e conceitos de programação funcional, porque, bem, claro que você tem, JavaScript funcional é quente como o inferno (**muito foda**) ultimamente.
 
@@ -42,7 +42,7 @@ Antes dessa quarta-feira, a incubadora de startup por trás do Hacker News era a
 ) // 13
 
 ```
-*[Link para esse gist](https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js)*
+*[Link para esse gist original](https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js)*
 
 
 > Fibonacci foi a primeira função recursiva que me lembrei.
@@ -60,7 +60,7 @@ Você provavelmente está familiarizado com a recursão, é isso, uma função d
 })(7)
 
 ```
-*[Link para esse gist](https://gist.github.com/stefanmaric/a1447305b7d4df9127691a7a2e590000#file-seemingly-imposible-recursive-fib-function-js)*
+*[Link para esse gist original](https://gist.github.com/stefanmaric/a1447305b7d4df9127691a7a2e590000#file-seemingly-imposible-recursive-fib-function-js)*
 
 A [função *y-combinator*](https://en.wikipedia.org/wiki/Fixed-point_combinator) é uma prova do Haskell Curry que a recursão pode ser expressa como um conjunto de regras de reescrita quando a recursão explícita é impossível, como no cálculo lambda. Pode não ser muito útil para o desenvolvimento diário, mas é muito interessante que você possa conseguir um estilo de programação puramente funcional em JavaScript.
 
@@ -87,7 +87,7 @@ Eu não explicarei a implementação do *y-combinator* em detalhes, você pode l
 }) // 13
 
 ```
-*[Link para esse gist](https://gist.github.com/stefanmaric/5dac3de81cd26fbf38750751509c71f5#file-pure-functional-y-combinator-in-plain-es5-js)*
+*[Link para esse gist original](https://gist.github.com/stefanmaric/5dac3de81cd26fbf38750751509c71f5#file-pure-functional-y-combinator-in-plain-es5-js)*
 
 > Observe como é fácil eliminar a declaração de função fib; alguma função que envolve aqui e ali e você está definido.
 
@@ -114,7 +114,7 @@ function fib (n, current = 0, next = 1) {
 }
 
 ```
-*[Link para esse gist](https://gist.github.com/stefanmaric/6dd9e6b034fc0cb1e4b822faad8803c9#file-fib-functions-compared-js)*
+*[Link para esse gist original](https://gist.github.com/stefanmaric/6dd9e6b034fc0cb1e4b822faad8803c9#file-fib-functions-compared-js)*
 
 > O mais tarde executa suave. O primeiro vai machucar a sua máquina, é uma *[fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)*.
 
@@ -127,3 +127,28 @@ function fib (n, current = 0, next = 1) {
 
 
 A última ação da função `fib` original é uma [operação aritmética](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators), uma soma de números, enquanto a nova é uma chamada de função, significando que é escrita na forma *[tail-recursive](http://stackoverflow.com/a/37010)*. Ao lado da diferença de complexidade de tempo já mostrada, ela também se beneficia do *[Tail Call Optimization](https://benignbemine.github.io/2015/07/19/es6-tail-calls/)* introduzido no [ES2015](https://kangax.github.io/compat-table/es6/), que basicamente transforma a recursão em um `while-loop` sob o capô, ignorando a criação de novas camadas na [Function Call Stack](https://www.youtube.com/watch?v=8aGhZQkoFbQ), indo da complexidade de espaço linear `O(n)` para complexidade de espaço constante `O(1)`, permitindo que fib([Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)) eventualmente retorne `Infinity` (devido às [limitações](http://www.2ality.com/2012/07/large-integers.html) de número do JavaScript) sem retornar erro "***Maximum call stack size exceeded***" - melhor tarde e errado do que nunca, hein?
+
+
+## trampoline
+
+Temos uma função de Fibonacci recursiva bastante performática que pode chamar-se alguns **9 quintilhões de vezes sem transbordar a *call stack***, bom, certo? Bem, não tão bom desde que, no momento da escrita, o JavaScriptCore do Safari é o único mecanismo que [implementou o TCO](https://kangax.github.io/compat-table/es6/#test-proper_tail_calls_%28tail_call_optimisation%29). Felizmente, há uma técnica chamada *[trampolining](https://en.wikipedia.org/wiki/Trampoline_%28computing%29#High-level_programming)* para superar a limitação da *Function Call Stack* em plataformas que não têm TCO, tirando o resultado de cada invocação de função fora de seu *stack frame*.
+
+
+```js
+
+const trampoline = fn => (...args) => {
+  let result = fn(...args)
+  while (result instanceof Function) result = result()
+  return result
+}
+
+trampoline(function fib (n, current = 0, next = 1) {
+  return n ? () => fib(n - 1, next, current + next) : current
+})(7) // 13
+
+```
+*[Link para esse gist original](https://gist.github.com/stefanmaric/442e177a49d5912caabe9e0a9b88d6f8#file-trampoline-function-js)*
+
+> Mais alguns envolvimentos(wrapping) de função.
+
+
