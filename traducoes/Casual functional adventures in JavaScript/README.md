@@ -1,7 +1,7 @@
 ```
 
 Artigo traduzido de: 
-https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de#.2xik2mmhw
+https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de
 
 ```
 
@@ -62,3 +62,4 @@ Você provavelmente está familiarizado com a recursão, é isso, uma função d
 ```
 *[Link para esse gist](https://gist.github.com/stefanmaric/a1447305b7d4df9127691a7a2e590000#file-seemingly-imposible-recursive-fib-function-js)*
 
+A [função *y-combinator*](https://en.wikipedia.org/wiki/Fixed-point_combinator) é uma prova do Haskell Curry que a recursão pode ser expressa como um conjunto de regras de reescrita quando a recursão explícita é impossível, como no cálculo lambda. Pode não ser muito útil para o desenvolvimento diário, mas é muito interessante que você possa conseguir um estilo de programação puramente funcional em JavaScript.
