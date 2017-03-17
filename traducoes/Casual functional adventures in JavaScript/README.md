@@ -201,5 +201,46 @@ Aplicando o que foi explicado hoje e mais algum *currying* e composição de fun
 > Equivalente no [ES5](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015&targets=&browsers=&builtIns=false&code=const%20y%20%3D%20le%20%3D%3E%20%28f%20%3D%3E%20f%28f%29%29%28f%20%3D%3E%20le%28x%20%3D%3E%20f%28f%29%28x%29%29%29%0A%0Aconst%20flow%20%3D%20%28...fns%29%20%3D%3E%20x%20%3D%3E%20fns.reduce%28%28v%2C%20f%29%20%3D%3E%20f%28v%29%2C%20x%29%0A%0Aconst%20trampoline%20%3D%20fn%20%3D%3E%20%28...args%29%20%3D%3E%20%7B%0A%20let%20result%20%3D%20fn%28...args%29%0A%20while%20%28result%20instanceof%20Function%29%20result%20%3D%20result%28%29%0A%20return%20result%0A%7D%0A%0Aconst%20yTrampoline%20%3D%20flow%28y%2C%20trampoline%29%0A%0Aconst%20fib%20%3D%20yTrampoline%28%0A%20self%20%3D%3E%20n%20%3D%3E%20%28current%20%3D%200%29%20%3D%3E%20%28next%20%3D%201%29%20%3D%3E%20n%20%3F%20%28%29%20%3D%3E%20self%28n%20-%201%29%28next%29%28current%20%2B%20next%29%20%3A%20current%0A%29%0A%0Afib%287%29%0A) aqui.
 
 
+E aqui o mesmo trecho, mas usando `big-integer` para realmente calcular grandes números na série Fibonacci sem chegar em `Infinity`:
 
+```js
+
+const int = require('big-integer')
+
+const y = le => (f => f(f))(f => le(x => f(f)(x)))
+
+const flow = (...fns) => x => fns.reduce((v, f) => f(v), x)
+
+const trampoline = fn => (...args) => {
+  let result = fn(...args)
+  while (result instanceof Function) result = result()
+  return result
+}
+
+const yTrampoline = flow(y, trampoline)
+
+const fib = n => yTrampoline(
+  self => n => (current = int.zero) => (next = int.one) => n.isZero()
+    ? current.toString()
+    : () => self(n.minus(1))(next)(current.add(next))
+)(int(n))
+
+fib(99306) // very big integer (as string)
+
+```
+
+E, finalmente, [alguns benchmarks](https://jsperf.com/fibonacci-functions-compared/):
+
+![](https://cdn-images-1.medium.com/max/880/1*5EYDU-Z31jVKQ6TNOXhR8g.png)
+
+
+## Conclusões e leituras adicionais
+
+- Programação funcional pode ser um pouco difícil de entender, mas também pode ser viciante, uma vez que você entrar nelavxz.
+- Chamadas de função são caras, use-as sabiamente se você se importa.
+- Troca de variável com [Destructing Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) é muito cara.
+- Sério, manter os procedimentos iterativos se o desempenho é importante.
+- Minhas [notas originais](https://gist.github.com/stefanmaric/1dfc01dd3985d5b423f22fcad7c58da2) daquela quarta-feira aleatória se você for curioso.
+- Não está claro sobre a composição da função? [Veja isso](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0).
+- Deve ler: [memorização automática usando y-combinator](https://matt.might.net/articles/implementation-of-recursive-fixed-point-y-combinator-in-javascript-for-memoization/).
 
