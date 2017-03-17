@@ -169,3 +169,37 @@ Lembre-se de que uma função *trampolined* com seus *thunks* duplica a quantida
 > *Making JavaScript look like Lisp, one parenthesis at a time*. — Adrián Obelmejias, 2017
 
 <br>
+
+## Empacotando / Wrapping up
+
+Applying everything explained today plus some currying and function composition, we can write something very functional like this:
+
+
+Aplicando o que foi explicado hoje e mais algum *currying* e composição de função, podemos escrever algo muito funcional como isso:
+
+```js
+
+(
+  flow => y => trampoline => fib => n => flow(y, trampoline)(fib)(n)
+)(
+  (...fns) => x => fns.reduce((v, f) => f(v), x)
+)(
+  le => (f => f(f))(f => le(x => f(f)(x)))
+)(
+  fn => (...args) => {
+    let result = fn(...args)
+    while (result instanceof Function) result = result()
+    return result
+  }
+)(
+  fib => n => (current = 0) => (next = 1) => n ? () => fib(n - 1)(next)(current + next) : current  
+)(7) // 13
+
+```
+*[Link para esse gist original](https://gist.github.com/stefanmaric/b645ff12e68bcdae30ad57f149a37813#file-recursive-fib-with-y-combinator-and-trampoline-js)*
+
+> Equivalente no [ES5](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015&targets=&browsers=&builtIns=false&code=const%20y%20%3D%20le%20%3D%3E%20%28f%20%3D%3E%20f%28f%29%29%28f%20%3D%3E%20le%28x%20%3D%3E%20f%28f%29%28x%29%29%29%0A%0Aconst%20flow%20%3D%20%28...fns%29%20%3D%3E%20x%20%3D%3E%20fns.reduce%28%28v%2C%20f%29%20%3D%3E%20f%28v%29%2C%20x%29%0A%0Aconst%20trampoline%20%3D%20fn%20%3D%3E%20%28...args%29%20%3D%3E%20%7B%0A%20let%20result%20%3D%20fn%28...args%29%0A%20while%20%28result%20instanceof%20Function%29%20result%20%3D%20result%28%29%0A%20return%20result%0A%7D%0A%0Aconst%20yTrampoline%20%3D%20flow%28y%2C%20trampoline%29%0A%0Aconst%20fib%20%3D%20yTrampoline%28%0A%20self%20%3D%3E%20n%20%3D%3E%20%28current%20%3D%200%29%20%3D%3E%20%28next%20%3D%201%29%20%3D%3E%20n%20%3F%20%28%29%20%3D%3E%20self%28n%20-%201%29%28next%29%28current%20%2B%20next%29%20%3A%20current%0A%29%0A%0Afib%287%29%0A) aqui.
+
+
+
+
