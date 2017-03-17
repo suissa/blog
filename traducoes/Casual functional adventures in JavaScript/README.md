@@ -1,0 +1,47 @@
+```
+
+Artigo traduzido de: 
+https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de#.2xik2mmhw
+
+```
+
+# Aventuras funcionais ocasionais em JavaScript
+
+Em uma tarde de quarta-feira aleatória, meu bom amigo Daniel Rodríguez deixa cair algumas linhas em um grupo do Telegram que compartilhamos com Adrián Obelmejias e Roberto von Schoettler, muito animado com sua nova percepção: 
+
+
+> "Você já viu o *y-combinator* no ES6? É f*didamente lindo! " - ele escreveu. 
+
+
+E compartilhou este trecho:
+
+
+```js
+
+const y = le => (f => f(f))(f => le(x => f(f)(x)))
+
+```
+
+Nesse ponto, eu não tinha ideia do que era um *y-combinator* ou como esse pedaço de código funcionou; foi o início de uma busca espontânea de melhores respostas na terra da fantasia do JavaScript e eu estarei compartilhando nossas descobertas ingênuas hoje. Vou assumir que você tem alguma experiência com ES2015 e conceitos de programação funcional, porque, bem, claro que você tem, JavaScript funcional é quente como o inferno (**muito foda**) ultimamente.
+
+## y-combinator
+
+Before that Wednesday, the startup incubator behind Hacker News was the only “y-combinator” I knew about, so I had to go and read about y-combinator functions; I quickly grasped the idea and my answer to Daniel’s snippet was nothing more than another snippet:
+
+Antes dessa quarta-feira, a incubadora de startup por trás do Hacker News era a única "*y-combinator*" que eu conhecia, então eu tive que ir e ler sobre as funções de *y-combinator*; eu rapidamente compreendi a ideia e minha resposta ao trecho do Daniel não foi mais do que outro trecho:
+
+
+<script src="https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js"></script>
+
+```js
+
+(y =>
+  y(fib => n => n <= 2 ? 1 : fib(n - 1) + fib(n - 2))(7)
+)(le =>
+  (f => f(f))(f => le(x => f(f)(x)))
+) // 13
+
+```
+
+
+

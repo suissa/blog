@@ -266,6 +266,55 @@ const Component = ( config ) => {
 
 ```
 
+> \- **Percebeu que a resposta do `if ternário` é definida como o valor de cada `const`?**
+>
+> Porra Suissa da hora mein! Ci pah rola até com funções né?
+>
+> \- **Mermaooooo você leu meus pensamentos! Exatamente isso que vou lhe mostrar**
+
+
+
+```js
+
+const getName = ( obj ) => obj.name
+
+const getResult = ( data ) => data.map ? data.map( getName )  : getName( data )
+
+const arr = [
+  { name: 'Suissa', age: 32 },
+  { name: 'Jesus', age: 2017 }
+]
+
+const obj = { name: 'Suissa', age: 32 }
+
+console.log(`Nomes: `, getResult( arr ) )
+console.log(`Nome: `, getResult( obj ) )
+// Nomes:  [ 'Suissa', 'Jesus' ]
+// Nome:  Suissa
+
+
+```
+
+> \- **Percebeu o que foi feito?**
+
+
+O resultado da função `getResult`, que recebe `data` sem saber se é `Array` ou `Object`, 
+faz o seguinte teste lógico: 
+
+
+```
+
+SE EXISTE a função map em data
+
+  ENTÃO RETORNE data.map( getName )
+
+  SE NÃO RETORNE getName( data )
+
+```
+
+Ou seja, nossa função testa se o valor de entrada é um `Array`, pois só ele 
+
+
 ## Tipagem
 
 Como todos sabemos o JavaScript é **fracamente e dinamicamente tipado**, *note que qualquer advérvbio de modo (fraco/fracamente e dinâmico/dinamicamente) perde seu acento porque a sílaba tônica vem antes da antepenúltima sílaba, a proparoxítona, pode-se perceber essa regra com rápido/rapidamente*, logo **um Tipo no JavaScript pode mudar sua natureza, por assim dizer**.
@@ -274,7 +323,7 @@ Vamos analisar o seguinte caso:
 
 ```js
 
-const VALUES = [ 0, '0', false, null, undefined ]
+const VALUES = [ 0, '0', false, null, undefined, 1, -1, {}, () => {} ]
 
 const MY_REAL_VALUE = 0
 
