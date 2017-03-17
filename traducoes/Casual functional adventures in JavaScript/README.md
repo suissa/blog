@@ -26,12 +26,9 @@ Nesse ponto, eu não tinha ideia do que era um *y-combinator* ou como esse peda�
 
 ## y-combinator
 
-Before that Wednesday, the startup incubator behind Hacker News was the only “y-combinator” I knew about, so I had to go and read about y-combinator functions; I quickly grasped the idea and my answer to Daniel’s snippet was nothing more than another snippet:
-
 Antes dessa quarta-feira, a incubadora de startup por trás do Hacker News era a única "*y-combinator*" que eu conhecia, então eu tive que ir e ler sobre as funções de *y-combinator*; eu rapidamente compreendi a ideia e minha resposta ao trecho do Daniel não foi mais do que outro trecho:
 
 
-<script src="https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js"></script>
 
 ```js
 
@@ -42,6 +39,6 @@ Antes dessa quarta-feira, a incubadora de startup por trás do Hacker News era a
 ) // 13
 
 ```
-
+[Link para esse gist](https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js)
 
 
