@@ -8,7 +8,7 @@ https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de
 **Nota do tradutor**:
 
 > Esse artigo simplesmente me mostrou **muitas** coisas que eu nunca 
-> tinha estudado e com certeza me fez buscar mais conhecimento, 
+> tinha ouvido falar e com certeza me fez buscar mais conhecimento sobre, 
 > espero que faça o mesmo por vocês! 
 
 # Aventuras funcionais ocasionais em JavaScript
@@ -157,4 +157,8 @@ trampoline(function fib (n, current = 0, next = 1) {
 
 > Mais alguns envolvimentos(wrapping) de função.
 
+A implementação `trampoline` acima toma uma função `fn` e retorna uma nova função (a versão "*trampolined*") que, quando chamada, invocará `fn` passando seus argumentos. `fn` deve retornar um resultado ou um "*thunk*"; Um *thunk* é uma função que retorna um resultado ou outro *thunk*; Esses *thunks* serão invocados até que um resultado saia.
+
+
+Observe que a função `fib` foi ligeiramente modificada para retornar um *thunk* em vez do valor que chamar a si mesmo, uma vez que o `fib` retorna sempre um valor ou um *thunk*, seu *stack frame* é descartado e sua invocação recursiva acontece fora de `fib`, no contexto da função *trampolined*, impedindo que funções de `fib` se acumulem na pilha de chamadas. Os fechamentos(closures) dos *thunks* mantêm as informações necessárias para que suas invocações internas de `fib` funcionem, `n` acabará por acertar `0` para `fib` retornar um valor, quebrando o *while loop* e encadeando o resultado fora da função *trampolined*.
 
