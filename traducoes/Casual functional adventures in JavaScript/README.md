@@ -119,3 +119,8 @@ function fib (n, current = 0, next = 1) {
 > O mais tarde executa suave. O primeiro vai machucar a sua máquina, é uma *[fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)*.
 
 ![fork bomb](https://upload.wikimedia.org/wikipedia/commons/5/52/Fork_bomb.svg)
+
+
+Ótimo! A nova função cresce linearmente para `n = 30`, fib é chamada 31 vezes, enquanto usando o código original ela **estava sendo invocada cerca de um milhão de vezes para o mesmo `n`**, fazendo sua máquina sufocar no processo. E esta não foi a única melhoria que eu apresentei; quase sem perceber, eu estava tocando em outro conceito muito funcional:
+
+> [...] uma *tail call* é uma chamada de sub-rotina realizada como a ação final de um procedimento. Se uma *tail call* pode levar à mesma sub-rotina sendo chamada novamente mais tarde na cadeia de chamada, a sub-rotina é dita ser *tail-recursive*, que é um caso especial de recursão.
