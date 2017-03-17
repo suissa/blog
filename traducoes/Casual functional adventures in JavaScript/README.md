@@ -8,7 +8,7 @@ https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de#.
 # Aventuras funcionais ocasionais em JavaScript
 
 <div style="text-align: center">
-  <img src="https://raw.githubusercontent.com/suissa/blog/master/traducoes/imgs/recursion.png" alt="recursion meme">
+  <img src="https://raw.githubusercontent.com/suissa/blog/master/traducoes/imgs/recursion.png" alt="recursion meme" style="margin: 0 auto">
 </div>
 
 Em uma tarde de quarta-feira aleatória, meu bom amigo Daniel Rodríguez deixa cair algumas linhas em um grupo do Telegram que compartilhamos com Adrián Obelmejias e Roberto von Schoettler, muito animado com sua nova percepção: 
