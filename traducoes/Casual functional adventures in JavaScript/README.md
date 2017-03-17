@@ -45,3 +45,20 @@ Antes dessa quarta-feira, a incubadora de startup por trás do Hacker News era a
 *[Link para esse gist](https://gist.github.com/stefanmaric/abd5a8070f2d1be20a5921d9b7fea57b.js)*
 
 
+> Fibonacci foi a primeira função recursiva que me lembrei.
+
+
+Você provavelmente está familiarizado com a recursão, é isso, uma função de auto-chamada, que é muito funcional e legal, certo? Não exatamente: o cálculo lambda não aceita declarações de função, ele permite apenas expressões de função anônimas e argumentos de função, o que significa que não é possível vincular funções a identificadores, portanto é impossível referir uma definição de função dentro de seu próprio corpo de função. É mais fácil entender esta limitação se você tentar escrever uma função recursiva de Fibonacci como uma *Anonymous Immediately Invoked Function Expression* vocês mesmos:
+
+
+```js
+
+// Faça esta IIFE anônima calcular o sétimo número na série fibonacci
+// PD: Sem iteradores, deve ser um procedimento recursivo
+(function (n) { 
+  return // Onde está o seu Deus agora?
+})(7)
+
+```
+*[Link para esse gist](https://gist.github.com/stefanmaric/a1447305b7d4df9127691a7a2e590000#file-seemingly-imposible-recursive-fib-function-js)*
+
