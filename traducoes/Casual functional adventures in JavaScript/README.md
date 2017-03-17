@@ -162,3 +162,10 @@ A implementação `trampoline` acima toma uma função `fn` e retorna uma nova f
 
 Observe que a função `fib` foi ligeiramente modificada para retornar um *thunk* em vez do valor que chamar a si mesmo, uma vez que o `fib` retorna sempre um valor ou um *thunk*, seu *stack frame* é descartado e sua invocação recursiva acontece fora de `fib`, no contexto da função *trampolined*, impedindo que funções de `fib` se acumulem na pilha de chamadas. Os fechamentos(closures) dos *thunks* mantêm as informações necessárias para que suas invocações internas de `fib` funcionem, `n` acabará por acertar `0` para `fib` retornar um valor, quebrando o *while loop* e encadeando o resultado fora da função *trampolined*.
 
+Lembre-se de que uma função *trampolined* com seus *thunks* duplica a quantidade total de chamadas de função e será superada por sua versão recursiva mais primitiva. Existem [muitas](https://taylodl.wordpress.com/2013/06/07/functional-javascript-tail-call-optimization-and-trampolines/) [implementações](http://www.datchley.name/recursion-tail-calls-and-trampolines/) de *[trampoline](http://blog.mattbierner.com/tail-call-implementation-and-defunctionalization-in-javascript/)* [lá fora](http://raganwald.com/2013/03/28/trampolines-in-javascript.html) e nenhuma pretendia aumentar o desempenho, mas as limitações dos motores de JavaScript requerem uma solução alternativa(gambi), assim, o suporte TCO ainda é bastante desejado.
+
+<br>
+
+> *Making JavaScript look like Lisp, one parenthesis at a time*. — Adrián Obelmejias, 2017
+
+<br>
