@@ -89,4 +89,33 @@ Eu não explicarei a implementação do *y-combinator* em detalhes, você pode l
 ```
 *[Link para esse gist](https://gist.github.com/stefanmaric/5dac3de81cd26fbf38750751509c71f5#file-pure-functional-y-combinator-in-plain-es5-js)*
 
+> Observe como é fácil eliminar a declaração de função fib; alguma função que envolve aqui e ali e você está definido.
 
+
+
+## Tail Call Optimization
+
+I was really excited about this discovery, but I couldn’t avoid to be bothered about my poorly improvised fib function, I knew there was something growing exponentially while using that classic fib() + fib() so I started to rework the function to call itself only once:
+
+Eu estava realmente animado com essa descoberta, mas não pude evitar ser incomodado com minha função improvisada de fib, eu sabia que havia algo crescendo exponencialmente ao usar esse fib () + fib () clássico, então comecei a retrabalhar a função para chamar-se apenas uma vez:
+
+```js
+
+// função fib original 
+// O(2^n) complexidade
+function fib (n) {
+  return n <= 2 ? 1 : fib(n - 1) + fib(n - 2)
+}
+
+// função fib melhorada
+// O(n+1) complexidade
+function fib (n, current = 0, next = 1) {
+  return n ? fib(n - 1, next, current + next) : current
+}
+
+```
+*[Link para esse gist](https://gist.github.com/stefanmaric/6dd9e6b034fc0cb1e4b822faad8803c9#file-fib-functions-compared-js)*
+
+> O mais tarde executa suave. O primeiro vai machucar a sua máquina, é uma *[fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)*.
+
+![fork bomb](https://upload.wikimedia.org/wikipedia/commons/5/52/Fork_bomb.svg)
