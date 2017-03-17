@@ -5,6 +5,12 @@ https://hackernoon.com/casual-functional-adventures-in-javascript-f2baec6c38de
 
 ```
 
+**Nota do tradutor**:
+
+> Esse artigo simplesmente me mostrou **muitas** coisas que eu nunca 
+> tinha estudado e com certeza me fez correr buscar mais conhecimento, 
+> espero que faça o mesmo por vocês! 
+
 # Aventuras funcionais ocasionais em JavaScript
 
 ![recursion meme](https://raw.githubusercontent.com/suissa/blog/master/traducoes/imgs/recursion.png)
