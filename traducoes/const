@@ -1,4 +1,0 @@
-https://medium.com/the-node-js-collection/what-does-const-stand-for-in-es6-f7ab3d9e06fc
-
-What does const stand for in ES6?
-If you come from a C-like programming language, you may wonder why the first ES6 JavaScript code is valid, but the second C program (as you well know) will make the compiler fail.
