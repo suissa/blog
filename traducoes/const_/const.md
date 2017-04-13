@@ -59,7 +59,7 @@ console.log(sUpper) // print HELLO WORLD
 ```
 
 
-Para tornar imutáveis ​​os valores de um objeto, você pode usar Object.freeze (). No entanto, ele só funciona em objetos de par de valor de propriedade, o que significa que ele não funcionará com outros objetos, como `Date`, `Map` and `Set`.
+Para tornar imutáveis ​​os valores de um objeto, você pode usar `Object.freeze()`. No entanto, ele só funciona em objetos de par de valor de propriedade, o que significa que ele não funcionará com outros objetos, como `Date`, `Map` and `Set`.
 
 ```
 
@@ -86,13 +86,13 @@ console.log(me.pet.breed) // print German Shepherd
 
 ```
 
-Como você pode ver no último exemplo, objetos aninhados dentro de um objeto congelado ainda podem ser mutados. Para tornar os valores de objeto totalmente imutáveis, convém usar um método deepFreeze() personalizado. Outra opção é usar [Immutable.js](https://facebook.github.io/immutable-js/), uma biblioteca que simplesmente não transforma objetos em imutáveis, mas sim fornece muitas estruturas de dados persistentes imutáveis, incluindo List, Stack, Map, OrderedMap, Set, OrderedSet e Record.
+Como você pode ver no último exemplo, objetos aninhados dentro de um objeto congelado ainda podem ser mutados. Para tornar os valores de objeto totalmente imutáveis, convém usar um método `deepFreeze()`` personalizado. Outra opção é usar [Immutable.js](https://facebook.github.io/immutable-js/), uma biblioteca que simplesmente não transforma objetos em imutáveis, mas sim fornece muitas estruturas de dados persistentes imutáveis, incluindo *List*, *Stack*, *Map*, *OrderedMap*, *Set*, *OrderedSet* e *Record*.
 
 
 
 ## var, let ou const?
 
-> **Por favor leia com atenção a afimação abaixo! **
+> **Por favor leia com atenção a afirmação abaixo! **
 
 No ES6, os desenvolvedores **NUNCA** devem usar `var` para definir uma variável ou uma constante. Na verdade, agora é o sinal mais fraco disponível quando você define uma variável em JavaScript.
 
