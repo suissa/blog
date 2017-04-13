@@ -172,9 +172,6 @@ Lembre-se de que uma função *trampolined* com seus *thunks* duplica a quantida
 
 ## Empacotando / Wrapping up
 
-Applying everything explained today plus some currying and function composition, we can write something very functional like this:
-
-
 Aplicando o que foi explicado hoje e mais algum *currying* e composição de função, podemos escrever algo muito funcional como isso:
 
 ```js
